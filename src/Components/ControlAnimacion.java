@@ -81,4 +81,10 @@ public class ControlAnimacion {
     public void setUso(boolean uso) {
         this.uso = uso;
     }
+
+    public void incrementa() {
+        x += progressX;
+        y += progressY;
+        pto = new Punto((int)x, (int)y);
+    }
 }

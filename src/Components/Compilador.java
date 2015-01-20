@@ -401,10 +401,10 @@ public class Compilador extends JFrame{
                     public void windowClosed(WindowEvent e) {
 
 
-                        disp.DBs=((DBConnection)DBC).getDBs();
-                        disp.TBs=((DBConnection)DBC).getTBs();
-                        disp.DataBaseSelected=((DBConnection)DBC).getBD();
-                        disp.DatabaseMagnament=((DBConnection)DBC).getSGBD();
+                        disp.DBs=((DbConnection)DBC).getDBs();
+                        disp.TBs=((DbConnection)DBC).getTBs();
+                        disp.DataBaseSelected=((DbConnection)DBC).getBD();
+                        disp.DatabaseMagnament=((DbConnection)DBC).getSGBD();
                         sqlistener.DBM=disp.DatabaseMagnament;
                         sqlistener.databaseSelected=disp.DataBaseSelected;
                         System.out.println(disp.DataBaseSelected);

@@ -206,4 +206,8 @@ public class ArcPuro extends Linea implements Serializable{
     public boolean getInhibitorArc() {
         return inhibitorArc;
     }
+
+    public void setColor(Color c) {
+        this.color = c;
+    }
 }

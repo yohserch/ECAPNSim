@@ -34,6 +34,12 @@ public class Arbol {
         elemByLevel = new Vector();
     }
 
+    public Arbol(Punto ptoI, Punto ptoF, Vector V) {
+        this.ptoI = ptoI;
+        this.ptoF = ptoF;
+        elemByLevel = V;
+    }
+
     // Returns the initial point of area
     public Punto getPtoI() {
         return ptoI;

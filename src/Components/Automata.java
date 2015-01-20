@@ -75,8 +75,8 @@ public class Automata {
         }
     }
 
-    public boolean compile(String s) {
-        boolean retVal = true;
+    public int compile(String s) {
+        int retVal = 1;
         int sind, eind;
         String ss;
         sind = 0;
@@ -92,7 +92,7 @@ public class Automata {
                     if (!(new AutTable(ss)).verify()) {
                         System.out.println("Error in table definition");
                         JOptionPane.showMessageDialog(null, "Error in table definition", "Error", JOptionPane.ERROR_MESSAGE);
-                        retVal = false;
+                        retVal = 0;
                     }
                     System.out.println("Es tabla: " + ss);
                     break;
@@ -101,7 +101,7 @@ public class Automata {
                     if (!(new AutEvent(ss)).verify()) {
                         System.out.println("Error in event definition");
                         JOptionPane.showMessageDialog(null, "Error in event definition", "Error", JOptionPane.ERROR_MESSAGE);
-                        retVal = false;
+                        retVal = 0;
                     }
                     System.out.println("Es evento: " + ss);
                     break;
@@ -109,14 +109,14 @@ public class Automata {
                     if (!(new AutRule(ss)).verify()) {
                         System.out.println("Error in rule definition");;
                         JOptionPane.showMessageDialog(null, "Error in rule definition", "Error", JOptionPane.ERROR_MESSAGE);
-                        retVal = false;
+                        retVal = 0;
                     }
                     System.out.println("Es regla: " + ss);
                     break;
                 default:
                     System.out.println("Error it's not table, event or rule");
                     System.out.println("The system can't identify which is:" + ss);
-                    retVal = false;
+                    retVal = 0;
                     JOptionPane.showMessageDialog(null, "The system can't identify which is", "Error", JOptionPane.ERROR_MESSAGE);
                     break;
             }
@@ -130,7 +130,7 @@ public class Automata {
         if (sind < s.length()) {
             for (; sind < s.length(); sind++) {
                 if (s.charAt(sind) != ' ' && s.charAt((sind)) != '\n' && s.charAt(sind) != '\0') {
-                    retVal = false;
+                    retVal = 0;
                     JOptionPane.showMessageDialog(null, "Missing signs", "Error", JOptionPane.ERROR_MESSAGE);
                     break;
                 }
