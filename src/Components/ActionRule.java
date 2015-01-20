@@ -23,11 +23,10 @@ public class ActionRule implements Serializable{
     // private String tableName;
     // private String query;
 
-    public ActionRule(String description) {
+    public ActionRule(String description) throws ActionWrongException{
     	if(!description.trim().toLowerCase().startsWith("then "))
     		throw new ActionWrongException();
     	this.description = description.trim().substring(5, description.length()).trim();
-
     	if(!verify())
     		throw new ActionWrongException();
     }
